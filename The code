@@ -1,0 +1,502 @@
+#Ticker System for User to input commands
+#User will be defined as the Conductor
+
+Fare_Rate=8#Cost to travel 1km x Distance
+Ref_No = 6400443
+
+#Distance
+
+Destination_1=0
+Destination_2=5
+Destination_3=10
+Destination_4=15
+Destination_5=20
+Destination_6=25
+Destination_7=30
+Destination_8=35
+Destination_9=40
+Destination_10=45
+Destination_11=50
+Destination_12=55
+Destination_13=60
+Destination_14=65
+Destination_15=70
+
+#interface
+GUI =  """
+============================
+| Destinations
+| 718 . Gampola - Kandy
+| 19 - Gampola - Colombo
+| 725 . Nawalapitiya - Kandy
+| 16 - Nawalapitiya - Colombo
+============================
+"""
+Gampola_Kandy ="""
+============================
+| Destinations
+| 1 - Gampola
+| 2 - Kahatapitiya
+| 3 - Weligalle
+| 4 - Gelioya
+| 5 - Peradeniya       
+| 6 - Kandy               
+============================
+"""
+
+Gampola_Colombo ="""
+============================
+| Destinations
+| 1 - Gampola
+| 2 - Kahatapitiya
+| 3 - Weligalle
+| 4 - Gelioya
+| 5 - Peradeniya       
+| 6 - Kaduhannawa
+| 7 - Hingule
+| 8 - Kagalle
+| 9 - Warakapola
+| 10 - Yakkala
+| 11 - Colombo
+============================
+"""
+
+Nawalapitiya_Kandy ="""
+============================
+| Destinations
+| 1 - Nawalpitiya
+| 2 - Ulapena
+| 3 - Jayamalapura
+| 4 - Gampola
+| 5 - Kahtapitiya
+| 6 - Weligalle      
+| 7 - Gelioya
+| 8 - Peradeniya
+| 9 - Kandy
+============================
+"""
+
+Nawalapitiya_Colombo ="""
+============================
+| Destinations
+| 1 - Nawalpitiya
+| 2 - Uleapena
+| 3 - Jayamalapura
+| 4 - Gampola  
+| 5 - Weligalle      
+| 7 - Gelioya
+| 8 - Peradeniya
+| 9 - Kaduhannawa
+| 10 - Hingule
+| 11 - Kagalle
+| 12 - Warakapola
+| 13 - Yakkala
+| 14 - Colombo
+============================
+"""
+
+print (GUI)
+
+Bus_Type = int (input("Input Bus Type : "))
+Passenger=int(input("Enter Number of Passengers: "))
+if (Bus_Type == 718):
+    Route = "Gampola-Kandy"
+    print (Gampola_Kandy)
+    Start = int (input("Enter Starting Location : "))
+    End=int(input("Enter Ending Location: "))
+    Seat = str (input("H or F (Half/Full) :"))
+
+
+
+    if (Start == 1):
+        Starting_Location = "Gampola" 
+        Starting_Destination = Destination_1  
+    elif (Start==2):
+        Starting_Location = "Kahatapitiya"
+        Starting_Destination = Destination_2
+    elif (Start==3):
+        Starting_Location = "Weligalle"
+        Starting_Destination = Destination_3
+    elif (Start==4):
+        Starting_Location = "Gelioya"
+        Starting_Destination = Destination_4
+    elif (Start==5):
+        Starting_Location = "Peradeniya"
+        Starting_Destination = Destination_5
+    elif (Start==6):
+        Starting_Location = "Kandy"
+        Starting_Destination = Destination_6
+
+    if (End == 1): 
+        Ending_Location = "Gampola"
+        Ending_Destination = Destination_1
+    elif (End == 2):
+        Ending_Location = "Kahatapitiya"
+        Ending_Destination = Destination_2
+    elif (End == 3):
+        Ending_Location = "Weligalle"
+        Ending_Destination = Destination_3
+    elif (End == 4):
+        Ending_Location = "Gelioya"
+        Ending_Destination = Destination_4
+    elif (End == 5):
+        Ending_Location = "Peradeniya"
+        Ending_Destination = Destination_5
+    elif (End == 6):
+        Ending_Location = "Kandy"
+        Ending_Destination = Destination_6
+
+    if (Start<End):
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+    else:
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+
+elif (Bus_Type == 19):
+    Route = "Gampola-Colombo"
+    print (Gampola_Colombo)
+    Start = int (input("Enter Starting Location : "))
+    End=int(input("Enter Ending Location: "))
+    Seat = str (input("H or F (Half/Full) :"))
+
+    if (Start == 1):
+        Starting_Location = "Gampola" 
+        Starting_Destination = Destination_1  
+    elif (Start==2):
+        Starting_Location = "Kahatapitiya"
+        Starting_Destination = Destination_2
+    elif (Start==3):
+        Starting_Location = "Weligalle"
+        Starting_Destination = Destination_3
+    elif (Start==4):
+        Starting_Location = "Gelioya"
+        Starting_Destination = Destination_4
+    elif (Start==5):
+        Starting_Location = "Peradeniya"
+        Starting_Destination = Destination_5
+    elif (Start==6):
+        Starting_Location = "Kaduhannawa"
+        Starting_Destination = Destination_6
+    elif (Start==7):
+        Starting_Location = "Hingule"
+        Starting_Destination = Destination_7
+    elif (Start==8):
+        Starting_Location = "Kagalle"
+        Starting_Destination = Destination_8
+    elif (Start==9):
+        Starting_Location = "Warakapola"
+        Starting_Destination = Destination_9
+    elif (Start==10):
+        Starting_Location = "Yakkala"
+        Starting_Destination = Destination_10
+    elif (Start==11):
+        Starting_Location = "Colombo"
+        Starting_Destination = Destination_11
+
+    if (End == 1): 
+        Ending_Location = "Gampola"
+        Ending_Destination = Destination_1
+    elif (End == 2):
+        Ending_Location = "Kahatapitiya"
+        Ending_Destination = Destination_2
+    elif (End == 3):
+        Ending_Location = "Weligalle"
+        Ending_Destination = Destination_3
+    elif (End == 4):
+        Ending_Location = "Gelioya"
+        Ending_Destination = Destination_4
+    elif (End==5):
+        Ending_Location = "Peradeniya"
+        Ending_Destination = Destination_5
+    elif (End==6):
+        Ending_Location = "Kaduhannawa"
+        Ending_Destination = Destination_6
+    elif (End==7):
+        Ending_Location = "Hingule"
+        Ending_Destination = Destination_7
+    elif (End==8):
+        Ending_Location = "Kagalle"
+        Ending_Destination = Destination_8
+    elif (End==9):
+        Ending_Location = "Warakapola"
+        Ending_Destination = Destination_9
+    elif (End==10):
+        Ending_Location = "Yakkala"
+        Ending_Destination = Destination_10
+    elif (End==11):
+        Ending_Location = "Colombo"
+        Ending_Destination = Destination_11
+
+    if (Start<End):
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+    else:
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+
+elif (Bus_Type == 725):
+    Route = "Nawalapitiya-Kandy"
+    print (Nawalapitiya_Kandy)
+    Start = int (input("Enter Starting Location : "))
+    End=int(input("Enter Ending Location: "))
+    Seat = str (input("H or F (Half/Full) :"))
+
+    if (Start == 1):
+        Starting_Location = "Nawalpitiya" 
+        Starting_Destination = Destination_1  
+    elif (Start==2):
+        Starting_Location = "Ulapena"
+        Starting_Destination = Destination_2
+    elif (Start==3):
+        Starting_Location = "Jayamalapura"
+        Starting_Destination = Destination_3
+    elif (Start==4):
+        Starting_Location = "Gampola"
+        Starting_Destination = Destination_4
+    elif (Start==5):
+        Starting_Location = "Kahtapitiya"
+        Starting_Destination = Destination_5
+    elif (Start==6):
+        Starting_Location = "Weligalle"
+        Starting_Destination = Destination_6
+    elif (Start==7):
+        Starting_Location = "Gelioya"
+        Starting_Destination = Destination_7
+    elif (Start==8):
+        Starting_Location = "Peradeniya"
+        Starting_Destination = Destination_8
+    elif (Start==9):
+        Starting_Location = "Kandy"
+        Starting_Destination = Destination_9
+
+    if (End == 1):
+        Ending_Location = "Nawalpitiya" 
+        Ending_Destination = Destination_1  
+    elif (End==2):
+        Ending_Location = "Ulapena"
+        Ending_Destination = Destination_2
+    elif (End==3):
+        Ending_Location = "Jayamalapura"
+        Ending_Destination = Destination_3
+    elif (End==4):
+        Ending_Location = "Gampola"
+        Ending_Destination = Destination_4
+    elif (End==5):
+        Ending_Location = "Kahtapitiya"
+        Ending_Destination = Destination_5
+    elif (End==6):
+        Ending_Location = "Weligalle"
+        Ending_Destination = Destination_6
+    elif (End==7):
+        Ending_Location = "Gelioya"
+        Ending_Destination = Destination_7
+    elif (End==8):
+        Ending_Location = "Peradeniya"
+        Ending_Destination = Destination_8
+    elif (End==9):
+        Ending_Location = "Kandy"
+        Ending_Destination = Destination_9
+
+    if (Start<End):
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+    else:
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+
+elif (Bus_Type == 16):
+    Route = "Nawalapitiya - Colombo"
+    print (Nawalapitiya_Colombo)
+    Start = int (input("Enter Starting Location : "))
+    End=int(input("Enter Ending Location: "))
+    Seat = str (input("H or F (Half/Full) :"))
+
+    if (Start == 1):
+        Starting_Location = "Nawalpitiya" 
+        Starting_Destination = Destination_1  
+    elif (Start==2):
+        Starting_Location = "Uleapena"
+        Starting_Destination = Destination_2
+    elif (Start==3):
+        Starting_Location = "Jayamalapura"
+        Starting_Destination = Destination_3
+    elif (Start==4):
+        Starting_Location = "Gampola "
+        Starting_Destination = Destination_4
+    elif (Start==5):
+        Starting_Location = "Kahtapitiya "
+        Starting_Destination = Destination_5
+    elif (Start==6):
+        Starting_Location = "Weligalle "
+        Starting_Destination = Destination_6
+    elif (Start==7):
+        Starting_Location = "Gelioya"
+        Starting_Destination = Destination_7
+    elif (Start==8):
+        Starting_Location = "Peradeniya"
+        Starting_Destination = Destination_8
+    elif (Start==9):
+        Starting_Location = "Kaduhannawa"
+        Starting_Destination = Destination_9
+    elif (Start==10):
+        Starting_Location = "Hingule"
+        Starting_Destination = Destination_10
+    elif (Start==11):
+        Starting_Location = "Kagalle"
+        Starting_Destination = Destination_11
+    elif (Start==12):
+        Starting_Location = "Warakapola"
+        Starting_Destination = Destination_12
+    elif (Start==13):
+        Starting_Location = "Kagalle"
+        Starting_Destination = Destination_13
+    elif (Start==14):
+        Starting_Location = "Yakkala"
+        Starting_Destination = Destination_14
+    elif (Start==15):
+        Starting_Location = "Colombo"
+        Starting_Destination = Destination_15
+    
+    if (End == 1):
+        Ending_Location = "Nawalpitiya" 
+        Ending_Destination = Destination_1  
+    elif (End==2):
+        Ending_Location = "Uleapena"
+        Ending_Destination = Destination_2
+    elif (End==3):
+        Ending_Location = "Jayamalapura"
+        Ending_Destination = Destination_3
+    elif (End==4):
+        Ending_Location = "Gampola "
+        Ending_Destination = Destination_4
+    elif (End==5):
+        Ending_Location = "Kahtapitiya "
+        Ending_Destination = Destination_5
+    elif (End==6):
+        Ending_Location = "Weligalle "
+        Ending_Destination = Destination_6
+    elif (End==7):
+        Ending_Location = "Gelioya"
+        Ending_Destination = Destination_7
+    elif (End==8):
+        Ending_Location = "Peradeniya"
+        Ending_Destination = Destination_8
+    elif (End==9):
+        Ending_Location = "Kaduhannawa"
+        Ending_Destination = Destination_9
+    elif (Start==10):
+        Ending_Location = "Hingule"
+        Ending_Destination = Destination_10
+    elif (End==11):
+        Ending_Location = "Kagalle"
+        Ending_Destination = Destination_11
+    elif (End==12):
+        Ending_Location = "Warakapola"
+        Ending_Destination = Destination_12
+    elif (End==13):
+        Ending_Location = "Kagalle"
+        Ending_Destination = Destination_13
+    elif (End==14):
+        Ending_Location = "Yakkala"
+        Ending_Destination = Destination_14
+    elif (End==15):
+        Ending_Location = "Colombo"
+        Ending_Destination = Destination_15
+        
+    if (Start<End):
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Ending_Destination-Starting_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+    else:
+        if (Seat == "h") or (Seat == "H"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate/2
+            if (Seat =="h") or (Seat =="H"):
+                seat = "Half"
+        elif (Seat == "f") or (Seat == "F"):
+            Distance = Starting_Destination - Ending_Destination
+            Total_Cost=Distance*Fare_Rate
+            if (Seat =="f") or (Seat =="F"):
+                seat = "Full"
+
+
+#final Output
+
+import datetime #for livedate and time
+Date_Time = datetime.datetime.now()
+for i in range (Passenger):
+    Ref_No =Ref_No+1 
+    Ticket = (f"""
+    ===========================================
+                                                                            
+                                    VT-2287
+                                Vista Travels 
+                    PN#:6968 | Normal | RT#:19-02
+                            Ref No.:{Ref_No}  
+                     {Date_Time}
+                     ROUTE : {Route}
+                        {Starting_Location}-{Ending_Location}
+                   {seat} : 1 * {Total_Cost}.00 = {Total_Cost}.00
+                            (Journey - {Distance}Km)     
+                           Total: Rs.{Total_Cost}.00
+                           
+    ===========================================
+    """)
+    print (Ticket)
+
